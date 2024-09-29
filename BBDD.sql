@@ -12,6 +12,8 @@ CREATE TABLE Jugador (
 
 CREATE TABLE Partida (
     Id_partida INT PRIMARY KEY NOT NULL,
+    Fecha_hora_fin DATETIME NOT NULL,
+    Duracion TIME NOT NULL,
     Ganador INT,
     FOREIGN KEY (Ganador) REFERENCES Jugador(Id_jugador) 
 ) ENGINE = InnoDB;
@@ -30,9 +32,9 @@ INSERT INTO Jugador VALUES(3,'Jose',50,'avion');
 INSERT INTO Jugador VALUES(4,'Lucia',40,'constraseña');
 INSERT INTO Jugador VALUES(5,'Pablo',55,'juego');
 
-INSERT INTO Partida VALUES(1,5);
-INSERT INTO Partida VALUES(2,3); 
-INSERT INTO Partida VALUES(3,5); 
+INSERT INTO Partida VALUES(1, '2024-09-30 10:30:00', '01:30:00', 5);
+INSERT INTO Partida VALUES(2, '2024-09-29 9:12:00', '02:55:00', 3);
+INSERT INTO Partida VALUES(3, '2024-09-28 15:20:00', '00:45:00', 5);
 
 INSERT INTO Participacion VALUES(1,2);
 INSERT INTO Participacion VALUES(1,4);
@@ -46,7 +48,3 @@ INSERT INTO Participacion VALUES(3,2);
 INSERT INTO Participacion VALUES(3,3);
 INSERT INTO Participacion VALUES(3,4);
 INSERT INTO Participacion VALUES(3,5);
-
-
- 
-
